@@ -1,0 +1,19 @@
+Suppose you have a virtual simulation of an eco-system. 
+You need to spawn different types of animals on this eco-system, by iterating a loop. 
+The types of animals to spawn are Dogs, Cats, Rabbits, Ducks, and Wolves. 
+
+The eco-system is a single class with an ArrayList to hold all the animals living in that eco-system. 
+
+By iterating a loop you can spawn all the animals. The loop goes from 1 to 100,
+although configurable by the user. (Arbitary end values can be provided, so instead of 100,
+maybe even 20 can be given)
+
+On looping we can have conditions, saying something like this:
+	If the iteration round is divisible by 5 then spawn a Dog 
+	If the iteration round is divisible by 8 then spawn a Cat 
+	If the iteration round is divisible by 10 then spawn a Wolf 
+
+These conditions are supplied by the user, into the main loop and at each iteration you must check all conditions and spawn animals accordingly. 
+
+Design a OOP system that implements this problem. 
+
