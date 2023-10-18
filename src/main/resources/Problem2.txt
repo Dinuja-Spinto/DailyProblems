@@ -1,0 +1,14 @@
+Flight Booking problem:
+
+Suppose you have a flight with 32 seats and you need to create a small system that allows people to book seats in that flight.
+
+The user needs to know if a given seat is available or not in constant time O(1).
+ -> boolean isSeatAvailable(int bookings, int seat);
+
+The user also needs to book a seat if it's available with constant time O(1).
+-> int bookSeat(int bookings, int seat);
+
+You can think of the seats as an array of bits and via bit manipulation you can implement two functions for checking seat availability and
+to book a given seat.
+
+You cannot use a loop for checking seats or booking seats, since these operations must be done in constant time. O(1).
