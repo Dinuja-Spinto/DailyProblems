@@ -2,7 +2,7 @@ package org.example.problem3;
 
 public class BroadcastingNews {
     public static void main(String[] args) {
-        News newsBroadcaster = new News("BBC News");
+        NewsChannel newsBroadcaster = new NewsChannel("BBC News");
 
         Person dinuja = new Person("Dinuja");
         Person snow = new Person("Snow");
