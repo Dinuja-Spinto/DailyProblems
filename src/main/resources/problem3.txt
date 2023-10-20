@@ -1,0 +1,32 @@
+Problem 3:
+
+Part A:
+-------
+Suppose you have a News class that gets a live broadcast of a random 15 character string every 5 seconds, and we need to inform each
+Person class instance of the 15 character random string every 5 seconds.
+
+The News class object can have multiple Person objects attached to it, and everytime a new 15 character string is produced every 5 seconds, the Person objects must be notified.
+
+After the Person objects are notified of the new 15 character string, each person object must print the following message onto the console.
+
+<Person name> : <News Object Broadcast name>: Date & time : <Random 15 character Message>
+
+Date & time can be formatted as follows dd/mm/yyyy hh:mm:ss
+
+The News class can have a list of Person objects, and each person can decided to remove themselves from the list at any time, or add themselves to the list at any time.
+
+Using an Observer pattern try to implement the following system.
+
+Part B:
+-------
+The Person class has multiple attributes, like first name, middle name, last name, date of birth, email address, address, etc.
+Using the builder pattern provide a way for users to implement and assign attributes to Person class objects easily.
+
+
+Part C:
+-------
+There are multiple News sub classes, which provide their own broadcast of random character strings at different time intervals, with their own broadcast name, and Persons can subscribe to these news sub classes as they wish.
+
+Some person object can subscribe to all News sub classes if they wish to. They need to recieve all the broadcasts in a timely manner.
+
+Make changes to your original system to accommodate this change.
