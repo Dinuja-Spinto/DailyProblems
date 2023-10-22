@@ -4,16 +4,18 @@ import org.example.problem3.observerPatternDemo.News.BBC;
 import org.example.problem3.observerPatternDemo.News.LATimes;
 import org.example.problem3.observerPatternDemo.News.NewsBroadcaster;
 
+import java.util.Date;
+
 public class Demo {
     public static void main(String[] args) {
 
         BBC bbcNews = new BBC("BBC News",10);
         LATimes laTimes = new LATimes("LA Times", 5);
 
-        Person personA = new Person("Gary", "Smith");
-        Person personB = new Person("James", "Smith");
-        Person personC = new Person("Mary", "Smith");
-        Person personD = new Person("Jane", "Smith");
+        Person personA = new Person.PersonBuilder("Gary", "Smith").setMiddleName("snow").setAddress("New York").build();
+        Person personB = new Person.PersonBuilder("James", "Smith").setdOfBirth(new Date(2023,10,11)).build();
+        Person personC = new Person.PersonBuilder("Mary", "Smith").setAddress("Los Angeles").build();
+        Person personD = new Person.PersonBuilder("Jane", "Smith").setEmail("Jane@mail.com").build();
 
         bbcNews.addSubscriber(personA);
         laTimes.addSubscriber(personC);

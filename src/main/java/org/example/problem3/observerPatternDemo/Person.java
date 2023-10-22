@@ -5,30 +5,43 @@ import java.util.Date;
 
 public class Person implements Subscriber {
     private String fname;
+    private String middleName;
     private String lname;
+    private Date dOfBirth;
+    private String email;
+    private String address;
 
-    public Person() {
-    }
-
-    public Person(String fname, String lname) {
-        this.fname = fname;
-        this.lname = lname;
+    private Person(PersonBuilder personBuilder) {
+        this.fname = personBuilder.fname;
+        this.lname = personBuilder.lname;
+        this.middleName = personBuilder.middleName;
+        this.dOfBirth = personBuilder.dOfBirth;
+        this.email = personBuilder.email;
+        this.address = personBuilder.address;
     }
 
     public String getFname() {
         return fname;
     }
 
-    public void setFname(String fname) {
-        this.fname = fname;
-    }
-
     public String getLname() {
         return lname;
     }
 
-    public void setLname(String lname) {
-        this.lname = lname;
+    public String getMiddleName() {
+        return middleName;
+    }
+
+    public Date getdOfBirth() {
+        return dOfBirth;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getAddress() {
+        return address;
     }
 
     public String getName(){
@@ -53,5 +66,56 @@ public class Person implements Subscriber {
     @Override
     public void sendMessage(Observer observer, String message) {
         System.out.println(this.getName() + " : " + observer.getName() + " : " + formatDate(new Date()) + " : " + message);
+    }
+
+    //use builder Pattern
+    public static class PersonBuilder{
+        private String fname;
+        private String middleName;
+        private String lname;
+        private Date dOfBirth;
+        private String email;
+        private String address;
+
+        public PersonBuilder(String fname, String lname) {
+            this.fname = fname;
+            this.lname = lname;
+        }
+
+        public PersonBuilder setMiddleName(String middleName) {
+            this.middleName = middleName;
+            return this;
+        }
+
+        public PersonBuilder setdOfBirth(Date dOfBirth) {
+            this.dOfBirth = dOfBirth;
+            return this;
+        }
+
+        public PersonBuilder setEmail(String email) {
+            this.email = email;
+            return this;
+        }
+
+        public PersonBuilder setAddress(String address) {
+            this.address = address;
+            return this;
+        }
+
+        public Person build() {
+            return new Person(this);
+        }
+
+        @Override
+        public String toString() {
+            return "PersonBuilder{" +
+                    "fname='" + fname + '\'' +
+                    ", middleName='" + middleName + '\'' +
+                    ", lname='" + lname + '\'' +
+                    ", dOfBirth=" + dOfBirth +
+                    ", email='" + email + '\'' +
+                    ", address='" + address + '\'' +
+                    '}';
+        }
     }
 }
