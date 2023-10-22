@@ -17,6 +17,7 @@ public class NewsChannel implements News{
 
     public NewsChannel(String broadcastName) {
         this.broadcastName = broadcastName;
+        this.subscribers = new ArrayList<>();
     }
 
     public String getBroadcastName() {
